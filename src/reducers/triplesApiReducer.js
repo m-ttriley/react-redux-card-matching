@@ -13,13 +13,15 @@ export default function triplesApiReducer(state = initialState, action) {
     }
     case actionTypes.FETCH_TRIPLES_SUCCESS: {
       const augmentedCards = {
-        [action.payload.difficulty]: _.map(action.payload.cards, (symbol, index) => ({
-          symbol,
-          id: index,
-          flipped: false,
-          matched: false,
-          difficulty: action.payload.difficulty,
-        })),
+        [action.payload.difficulty]: _.shuffle(
+          _.map(action.payload.cards, (symbol, index) => ({
+            symbol,
+            id: index,
+            flipped: false,
+            matched: false,
+            difficulty: action.payload.difficulty,
+          }))
+        ),
       }
       return {
         ...state,

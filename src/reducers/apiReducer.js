@@ -14,13 +14,15 @@ export default function apiReducer(state = initialState, action) {
     case actionTypes.FETCH_LEVELS_SUCCESS: {
       const levels = action.payload.levels
       const augmentedCards = _.map(levels, level => ({
-        [level.difficulty]: _.map(level.cards, (symbol, index) => ({
-          symbol,
-          id: index,
-          flipped: false,
-          matched: false,
-          difficulty: level.difficulty,
-        })),
+        [level.difficulty]: _.shuffle(
+          _.map(level.cards, (symbol, index) => ({
+            symbol,
+            id: index,
+            flipped: false,
+            matched: false,
+            difficulty: level.difficulty,
+          }))
+        ),
       }))
       return {
         ...state,
