@@ -24,13 +24,15 @@ class GameBoard extends Component {
   render() {
     return (
       <div>
-        <div className={styles.details}>
-          <Timer className={styles.timer} time={this.props.time} />
-          <h1>Moves: {this.props.moves}</h1>
-          <h1>Level: &quot;{this.props.level}&quot;</h1>
-          <h1> Matched: {this.props.matchedCards} </h1>
-          <br />
-          <button className={styles.btnGreen} onClick={this.props.resetBoard}>
+        <div className={styles.sidebar}>
+          <div className={styles.stats}>
+            <Timer className={styles.timer} time={this.props.time} />
+            <h1>Moves: {this.props.moves}</h1>
+            <h1>Level: &quot;{this.props.level}&quot;</h1>
+            <h1> Matched: {this.props.matchedCards} </h1>
+            <br />
+          </div>
+          <button className={styles.resetLevel} onClick={this.props.resetBoard}>
             RESET LEVEL
           </button>
           <button className={styles.fetchCards} onClick={this.props.fetchCards}>
@@ -64,6 +66,8 @@ export const propTypes = {
   onCardClick: PropTypes.func.isRequired,
   checkGameState: PropTypes.func.isRequired,
   resetBoard: PropTypes.func.isRequired,
+  fetchCards: PropTypes.func.isRequired,
+  fetchCardsText: PropTypes.string.isRequired,
   tick: PropTypes.func.isRequired,
 }
 
@@ -73,6 +77,8 @@ export const sampleProps = {
   matchedCards: [],
   moves: 2,
   level: 'one',
+  fetchCardsText: 'fetch',
+  fetchCards: () => {},
   onCardClick: () => {},
   checkGameState: () => {},
   resetBoard: () => {},

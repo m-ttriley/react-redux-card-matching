@@ -5,7 +5,7 @@ import GameBoard, { sampleProps } from '../GameBoard'
 
 Enzyme.configure({ adapter: new Adapter() })
 
-describe('Game', () => {
+describe('GameBoard', () => {
   test('renders moves, level, and matched cards', () => {
     const wrapper = shallow(<GameBoard {...sampleProps} />)
     expect(wrapper.text()).toContain(sampleProps.moves)
@@ -17,7 +17,10 @@ describe('Game', () => {
     const mockClick = jest.fn()
     const wrapper = shallow(<GameBoard {...sampleProps} resetBoard={mockClick} />)
     expect(mockClick.mock.calls.length).toBe(0)
-    wrapper.find('button').simulate('click')
+    wrapper.find('.resetLevel').simulate('click')
+    expect(mockClick.mock.calls.length).toBe(1)
+  })
+
   test('renders fetch level button', () => {
     const mockClick = jest.fn()
     const wrapper = shallow(<GameBoard {...sampleProps} fetchCards={mockClick} />)

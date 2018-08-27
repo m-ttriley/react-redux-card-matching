@@ -10,7 +10,7 @@ export const propTypes = {
 
 const Card = ({ symbol, flipped, onClick }) => (
   <button className={!flipped ? styles.cardDown : styles.card} onClick={onClick}>
-    {flipped ? symbol : null}
+    <div className={styles.innerCard}>{flipped ? symbol : null}</div>
   </button>
 )
 
@@ -20,7 +20,7 @@ export const sampleProps = {
   id: 1,
   symbol: 'a',
   flipped: false,
-  onClick: () => { },
+  onClick: () => {},
 }
 
 export default Card

@@ -58,7 +58,13 @@ Game.propTypes = {
   checkGameState: PropTypes.func.isRequired,
   resetBoard: PropTypes.func.isRequired,
   tick: PropTypes.func.isRequired,
-  game: PropTypes.shape({ ...gameBoardProps }),
+  game: PropTypes.shape({
+    time: gameBoardProps.time,
+    cards: gameBoardProps.cards,
+    matchedCards: gameBoardProps.matchedCards,
+    moves: gameBoardProps.moves,
+    level: gameBoardProps.level,
+  }),
 }
 
 export const sampleProps = {
