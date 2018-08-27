@@ -33,6 +33,9 @@ class GameBoard extends Component {
           <button className={styles.btnGreen} onClick={this.props.resetBoard}>
             RESET LEVEL
           </button>
+          <button className={styles.fetchCards} onClick={this.props.fetchCards}>
+            {this.props.fetchCardsText}
+          </button>
         </div>
         <div className={styles.gameboard}>
           <ul>

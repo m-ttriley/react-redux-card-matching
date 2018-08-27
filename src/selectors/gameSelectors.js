@@ -39,6 +39,11 @@ export const canFlipCardsSelector = createSelector(
   (maxCards, cardsFlipped) => cardsFlipped < maxCards
 )
 
+export const isTriplesSelector = createSelector(
+  [maxCardsFlippedSelector],
+  maxCardsFlipped => maxCardsFlipped === 3
+)
+
 export const gamePropsSelector = createSelector(
   [
     nonMatchedCardsSelector,
@@ -49,11 +54,13 @@ export const gamePropsSelector = createSelector(
     finishedSelector,
     isLoadingSelector,
     timeSelector,
+    isTriplesSelector,
   ],
-  (cards, matchedCards, level, moves, canFlipCards, finished, loading, time) => ({
+  (cards, matchedCards, level, moves, canFlipCards, finished, loading, time, isTriples) => ({
     loading,
     finished,
     canFlipCards,
+    isTriples,
     game: {
       cards,
       matchedCards,

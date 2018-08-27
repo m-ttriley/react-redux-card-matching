@@ -18,6 +18,11 @@ describe('Game', () => {
     const wrapper = shallow(<GameBoard {...sampleProps} resetBoard={mockClick} />)
     expect(mockClick.mock.calls.length).toBe(0)
     wrapper.find('button').simulate('click')
+  test('renders fetch level button', () => {
+    const mockClick = jest.fn()
+    const wrapper = shallow(<GameBoard {...sampleProps} fetchCards={mockClick} />)
+    expect(mockClick.mock.calls.length).toBe(0)
+    wrapper.find('.fetchCards').simulate('click')
     expect(mockClick.mock.calls.length).toBe(1)
   })
 

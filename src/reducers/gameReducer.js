@@ -51,9 +51,9 @@ export default function gameReducer(state = initialState, action) {
           matchedCards: [],
           currentLevel: state.currentLevel + 1,
         }
-      } else if (flippedCards.length > 1) {
+      } else if (flippedCards.length === state.maxCardsFlipped) {
         const cardCount = _.countBy(flippedCards, 'symbol')
-        const duplicateCards = _.keys(_.pickBy(cardCount, value => value > 1))
+        const duplicateCards = _.keys(_.pickBy(cardCount, value => value === state.maxCardsFlipped))
         if (duplicateCards.length > 0) {
           const matchedCards = _.map(
             _.filter(flippedCards, card => _.includes(duplicateCards, card.symbol)),

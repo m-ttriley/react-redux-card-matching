@@ -35,6 +35,8 @@ class Game extends Component {
             onCardClick={this.props.canFlipCards ? this.props.onCardClick : () => {}}
             checkGameState={this.props.checkGameState}
             resetBoard={this.props.resetBoard}
+            fetchCards={this.props.isTriples ? this.props.fetchLevels : this.props.fetchTriples}
+            fetchCardsText={this.props.isTriples ? 'TRY PAIRS' : 'TRY TRIPLES'}
             tick={this.props.tick}
           />
         ) : (
@@ -49,7 +51,9 @@ Game.propTypes = {
   loading: PropTypes.bool.isRequired,
   finished: PropTypes.bool.isRequired,
   canFlipCards: PropTypes.bool.isRequired,
+  isTriples: PropTypes.bool.isRequired,
   fetchLevels: PropTypes.func.isRequired,
+  fetchTriples: PropTypes.func.isRequired,
   onCardClick: PropTypes.func.isRequired,
   checkGameState: PropTypes.func.isRequired,
   resetBoard: PropTypes.func.isRequired,
@@ -60,7 +64,9 @@ Game.propTypes = {
 export const sampleProps = {
   loading: false,
   finished: false,
+  isTriples: false,
   fetchLevels: () => {},
+  fetchTriples: () => {},
   checkGameState: () => {},
   onCardClick: () => {},
   canFlipCards: true,

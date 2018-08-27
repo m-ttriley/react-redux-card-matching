@@ -103,11 +103,21 @@ describe('canFlipCardsSelector', () => {
   })
 })
 
+describe('isTriplesSelector', () => {
+  test('returns false if on pairs mode', () => {
+    expect(selectors.isTriplesSelector(mockGameState)).toEqual(false)
+  })
+  test('returns true if on triples mode', () => {
+    expect(selectors.isTriplesSelector({ ...mockGameState, maxCardsFlipped: 3 })).toEqual(true)
+  })
+})
+
 test('gamePropsSelector', () => {
   expect(selectors.gamePropsSelector(mockGameState)).toEqual({
     loading: mockGameState.loading,
     finished: mockGameState.finished,
     canFlipCards: selectors.canFlipCardsSelector(mockGameState),
+    isTriples: selectors.isTriplesSelector(mockGameState),
     game: {
       cards: selectors.nonMatchedCardsSelector(mockGameState),
       matchedCards: selectors.matchedSymbolsSelector(mockGameState),
