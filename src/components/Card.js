@@ -9,7 +9,7 @@ export const propTypes = {
 }
 
 const Card = ({ symbol, flipped, onClick }) => (
-  <button className={styles.card} onClick={onClick}>
+  <button className={!flipped ? styles.cardDown : styles.card} onClick={onClick}>
     {flipped ? symbol : null}
   </button>
 )
