@@ -1,0 +1,48 @@
+{
+  "name": "nyt-games-web-code-test",
+  "author": "Matthew Riley",
+  "description": "A game we won’t soon forget",
+  "version": "1.0.0",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NYTimes/games-web-code-test"
+  },
+  "private": true,
+  "dependencies": {
+    "babel-preset-kyt-react": "0.3.0",
+    "compression": "1.7.1",
+    "cross-fetch": "^2.2.2",
+    "express": "4.16.2",
+    "kyt": "0.9.0",
+    "lodash": "^4.17.10",
+    "prop-types": "15.6.0",
+    "react": "16.1.1",
+    "react-dom": "16.1.1",
+    "react-redux": "^5.0.7",
+    "reduce-reducers": "^0.4.3",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0",
+    "reselect": "^3.0.1"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "enzyme": "3.2.0",
+    "fetch-mock": "^6.5.2",
+    "prettier": "^1.8.2",
+    "redux-mock-store": "^1.5.3"
+  },
+  "scripts": {
+    "dev": "kyt dev",
+    "build": "kyt build",
+    "start": "node build/server/main.js",
+    "proto": "kyt proto",
+    "test": "kyt test",
+    "test-watch": "kyt test -- --watch",
+    "test-coverage": "kyt test -- --coverage",
+    "lint": "npm run lint-script && npm run lint-style",
+    "lint-script": "kyt lint-script",
+    "lint-style": "kyt lint-style",
+    "kyt:help": "kyt --help"
+  }
+}
