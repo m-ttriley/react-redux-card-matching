@@ -1,5 +1,5 @@
 import 'cross-fetch/polyfill'
-import { handleErrors } from '../utils/utils'
+import handleErrors from '../utils/utils'
 import actionTypes from '../constants/TriplesApiActionTypes'
 
 export const url = 'https://web-code-test-dot-nyt-games-prd.appspot.com/triples.json'

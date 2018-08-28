@@ -1,6 +1,6 @@
 import _ from 'lodash'
 import actionTypes from '../constants/ApiActionTypes'
-import { initialState } from './constants'
+import initialState from './constants'
 
 export default function apiReducer(state = initialState, action) {
   switch (action.type) {

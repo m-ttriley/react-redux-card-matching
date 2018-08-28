@@ -1,6 +1,6 @@
 import timerReducer from '../timerReducer'
 import actionTypes from '../../constants/TimerActionTypes'
-import { initialState } from '../constants'
+import initialState from '../constants'
 
 test('it should return initial state', () => {
   expect(timerReducer(undefined, {})).toEqual(initialState)

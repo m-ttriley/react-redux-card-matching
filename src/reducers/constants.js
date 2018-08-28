@@ -1,4 +1,4 @@
-export const initialState = {
+const initialState = {
   time: 0,
   levels: [],
   moves: 0,
@@ -11,3 +11,5 @@ export const initialState = {
   cardsFlipped: 0,
   maxCardsFlipped: 2,
 }
+
+export default initialState

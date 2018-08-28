@@ -1,7 +1,7 @@
 import _ from 'lodash'
 import actionTypes from '../constants/GameActionTypes'
 import { currentLevelNameSelector, levelCardsSelector } from '../selectors/gameSelectors'
-import { initialState } from './constants'
+import initialState from './constants'
 
 export default function gameReducer(state = initialState, action) {
   switch (action.type) {

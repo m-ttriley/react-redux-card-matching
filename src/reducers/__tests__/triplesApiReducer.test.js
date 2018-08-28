@@ -1,6 +1,6 @@
 import apiReducer from '../triplesApiReducer'
 import actionTypes from '../../constants/TriplesApiActionTypes'
-import { initialState } from '../constants'
+import initialState from '../constants'
 
 test('it should return initial state', () => {
   expect(apiReducer(undefined, {})).toEqual(initialState)

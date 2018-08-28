@@ -1,5 +1,7 @@
 import actionTypes from '../constants/TimerActionTypes'
 
-export const tick = () => ({
+const tick = () => ({
   type: actionTypes.TICK,
 })
+
+export default tick

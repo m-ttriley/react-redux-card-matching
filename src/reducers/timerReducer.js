@@ -1,5 +1,5 @@
 import actionTypes from '../constants/TimerActionTypes'
-import { initialState } from './constants'
+import initialState from './constants'
 
 export default function timerReducer(state = initialState, action) {
   switch (action.type) {

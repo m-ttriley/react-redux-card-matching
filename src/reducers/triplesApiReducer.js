@@ -1,6 +1,6 @@
 import _ from 'lodash'
 import actionTypes from '../constants/TriplesApiActionTypes'
-import { initialState } from './constants'
+import initialState from './constants'
 
 export default function triplesApiReducer(state = initialState, action) {
   switch (action.type) {

@@ -3,7 +3,7 @@ import { flipCardUp, flipCardDown, checkGameState, resetBoard } from '../actions
 import { fetchLevels } from '../actions/api'
 import { fetchTriples } from '../actions/triplesApi'
 import { gamePropsSelector } from '../selectors/gameSelectors'
-import { tick } from '../actions/timerActions'
+import tick from '../actions/timerActions'
 import Game from '../components/Game'
 
 const mapStateToProps = state => ({

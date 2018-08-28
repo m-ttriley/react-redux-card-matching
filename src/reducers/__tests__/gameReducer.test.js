@@ -1,6 +1,6 @@
 import gameReducer from '../gameReducer'
 import actionTypes from '../../constants/GameActionTypes'
-import { initialState } from '../constants'
+import initialState from '../constants'
 
 const mockGameState = {
   ...initialState,
